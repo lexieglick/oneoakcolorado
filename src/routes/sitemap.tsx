@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteMapDetail } from "@/components/SiteMapDetail";
 import type { LotData } from "@/components/SiteMapLot";
-import sitemapImage from "@/assets/sitemap-dark.png";
+import sitemapImage from "@/assets/Sitemap-light.png";
 
 export const Route = createFileRoute("/sitemap")({
   head: () => ({
