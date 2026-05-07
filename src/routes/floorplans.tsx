@@ -10,8 +10,8 @@ import perez2 from "@/assets/perezfp/perez-2.png";
 import sudik1 from "@/assets/sudikfp/sudik-1.png";
 import sudik2 from "@/assets/sudikfp/sudik-2.png";
 /* MICHAEL */
-import michael1 from "@/assets/Michaelfp/michael-1.png";
-import michael2 from "@/assets/Michaelfp/michael-2.png";
+import michael1 from "@/assets/michaelfp/michael-1.png";
+import michael2 from "@/assets/michaelfp/michael-2.png";
 
 export const Route = createFileRoute("/floorplans")({
   component: FloorPlans,
