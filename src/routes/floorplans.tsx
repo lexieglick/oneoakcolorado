@@ -4,11 +4,11 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 /* PEREZ */
-import perez1 from "@/assets/Perezfp/perez-1.png";
-import perez2 from "@/assets/Perezfp/perez-2.png";
+import perez1 from "@/assets/perezfp/perez-1.png";
+import perez2 from "@/assets/perezfp/perez-2.png";
 /* SUDIK */
-import sudik1 from "@/assets/Sudikfp/sudik-1.png";
-import sudik2 from "@/assets/Sudikfp/sudik-2.png";
+import sudik1 from "@/assets/sudikfp/sudik-1.png";
+import sudik2 from "@/assets/sudikfp/sudik-2.png";
 /* MICHAEL */
 import michael1 from "@/assets/Michaelfp/michael-1.png";
 import michael2 from "@/assets/Michaelfp/michael-2.png";
