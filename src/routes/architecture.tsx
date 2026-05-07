@@ -22,14 +22,14 @@ import cv08 from "@/assets/thecrestview/CAM_08.jpg";
 const crestviewGallery = [cv01, cv02, cv03, cv04, cv05, cv06, cv07, cv08];
 
 // Ridgeline gallery images
-import rl01 from "@/assets/theridgeline/cam_01.jpg";
-import rl02 from "@/assets/theridgeline/cam_02.jpg";
-import rl03 from "@/assets/theridgeline/cam_03.jpg";
-import rl04 from "@/assets/theridgeline/cam_04.jpg";
-import rl05 from "@/assets/theridgeline/cam_05.jpg";
-import rl06 from "@/assets/theridgeline/cam_06.jpg";
-import rl07 from "@/assets/theridgeline/cam_07.jpg";
-import rl08 from "@/assets/theridgeline/cam_08.jpg";
+import rl01 from "@/assets/theridgeline/CAM_01.jpg";
+import rl02 from "@/assets/theridgeline/CAM_02.jpg";
+import rl03 from "@/assets/theridgeline/CAM_03.jpg";
+import rl04 from "@/assets/theridgeline/CAM_04.jpg";
+import rl05 from "@/assets/theridgeline/CAM_05.jpg";
+import rl06 from "@/assets/theridgeline/CAM_06.jpg";
+import rl07 from "@/assets/theridgeline/CAM_07.jpg";
+import rl08 from "@/assets/theridgeline/CAM_08.jpg";
 
 const ridgelineGallery = [rl01, rl02, rl03, rl04, rl05, rl06, rl07, rl08];
 
