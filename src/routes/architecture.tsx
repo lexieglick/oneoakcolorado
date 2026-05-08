@@ -1,15 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import ridgelineImg from "@/assets/home-1.png";
 import crestviewImg from "@/assets/home-2.png";
 
-// Crestview gallery images
 import cv01 from "@/assets/thecrestview/CAM_01.jpg";
 import cv02 from "@/assets/thecrestview/CAM_02.jpg";
 import cv03 from "@/assets/thecrestview/CAM_03.jpg";
@@ -21,7 +19,6 @@ import cv08 from "@/assets/thecrestview/CAM_08.jpg";
 
 const crestviewGallery = [cv01, cv02, cv03, cv04, cv05, cv06, cv07, cv08];
 
-// Ridgeline gallery images
 import rl01 from "@/assets/theridgeline/CAM_01.jpg";
 import rl02 from "@/assets/theridgeline/CAM_02.jpg";
 import rl03 from "@/assets/theridgeline/CAM_03.jpg";
@@ -33,7 +30,6 @@ import rl08 from "@/assets/theridgeline/CAM_08.jpg";
 
 const ridgelineGallery = [rl01, rl02, rl03, rl04, rl05, rl06, rl07, rl08];
 
-// YouTube video IDs
 const videos = {
   ridgeline: "NSosbPN-PY4",
   crestview: "SyB7Fm1-zH0",
@@ -79,8 +75,7 @@ const homes = [
   },
 ];
 
-/* ── Image Gallery ───────────────────────────────────── */
-function ImageGallery({ images, title }: { images: string[]; title: string }) {
+function ImageGallery({ images }: { images: string[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -93,18 +88,32 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
 
   return (
     <>
-      <div className="relative mt-8">
-        <button onClick={() => scroll("left")} className="absolute left-2 top-1/2 -translate-y-1/2 z-10">‹</button>
-        <button onClick={() => scroll("right")} className="absolute right-2 top-1/2 -translate-y-1/2 z-10">›</button>
+      <div className="relative mt-6">
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/40 text-white w-8 h-8 flex items-center justify-center rounded-full text-xl"
+        >
+          ‹
+        </button>
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/40 text-white w-8 h-8 flex items-center justify-center rounded-full text-xl"
+        >
+          ›
+        </button>
 
-        <div ref={scrollRef} className="flex gap-2 overflow-x-auto pb-1">
+        <div
+          ref={scrollRef}
+          className="flex gap-2 overflow-x-auto pb-1 px-10"
+          style={{ scrollbarWidth: "none" }}
+        >
           {images.map((src, i) => (
             <button
               key={i}
               onClick={() => setLightboxIndex(i)}
-              className="flex-none w-[180px] h-[120px] overflow-hidden rounded-sm"
+              className="flex-none w-[40vw] md:w-[200px] h-[27vw] md:h-[133px] overflow-hidden rounded-sm"
             >
-              <img src={src} className="w-full h-full object-cover" />
+              <img src={src} className="w-full h-full object-cover" alt="" />
             </button>
           ))}
         </div>
@@ -113,12 +122,16 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div
-            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
             onClick={() => setLightboxIndex(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
             <img
               src={images[lightboxIndex]}
-              className="max-w-[90vw] max-h-[80vh]"
+              className="max-w-full max-h-[85vh] object-contain rounded"
+              alt=""
             />
           </motion.div>
         )}
@@ -127,7 +140,6 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
   );
 }
 
-/* ── Video Card (YouTube) ───────────────────────────────────── */
 function VideoCard({
   home,
   autoPlay,
@@ -137,16 +149,18 @@ function VideoCard({
 }) {
   return (
     <motion.div
-      className="w-full"
+      className="w-full min-w-0"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      {/* YouTube Video */}
-      <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+      <div
+        className="relative w-full rounded-sm overflow-hidden"
+        style={{ aspectRatio: "16/9" }}
+      >
         <iframe
-          className="absolute inset-0 w-full h-full rounded-sm"
+          className="absolute inset-0 w-full h-full"
           src={`https://www.youtube.com/embed/${home.videoId}?autoplay=${autoPlay ? 1 : 0}&mute=1&loop=1&playlist=${home.videoId}`}
           title={home.title}
           frameBorder="0"
@@ -155,7 +169,6 @@ function VideoCard({
         />
       </div>
 
-      {/* Text */}
       <div className="mt-5">
         <span className="text-xs uppercase tracking-widest text-primary">
           {home.specs}
@@ -164,16 +177,14 @@ function VideoCard({
         <p className="text-sm text-muted-foreground mt-2">{home.desc}</p>
       </div>
 
-      {/* Gallery */}
-      <ImageGallery images={home.gallery} title={home.title} />
+      <ImageGallery images={home.gallery} />
     </motion.div>
   );
 }
 
-/* ── Page ───────────────────────────────────── */
 function HomesPage() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Header />
 
       <main className="pt-24">
@@ -193,6 +204,6 @@ function HomesPage() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }
