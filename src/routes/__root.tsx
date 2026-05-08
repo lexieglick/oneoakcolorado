@@ -1,6 +1,5 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-
-import appCss from "../styles.css?url";
+import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
+import "../styles.css";
 
 function NotFoundComponent() {
   return (
@@ -25,44 +24,9 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "One Oak — Luxury Community in Castle Rock, CO" },
-      { name: "description", content: "One Oak is an exclusive luxury community in the foothills of Castle Rock, Colorado, featuring custom homes by premier builders." },
-      { property: "og:title", content: "One Oak — Luxury Community in Castle Rock, CO" },
-      { property: "og:description", content: "One Oak is an exclusive luxury community in the foothills of Castle Rock, Colorado, featuring custom homes by premier builders." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:title", content: "One Oak — Luxury Community in Castle Rock, CO" },
-      { name: "twitter:description", content: "One Oak is an exclusive luxury community in the foothills of Castle Rock, Colorado, featuring custom homes by premier builders." },
-      { name: "twitter:card", content: "summary" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   return <Outlet />;
