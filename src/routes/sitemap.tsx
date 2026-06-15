@@ -22,7 +22,7 @@ export const Route = createFileRoute("/sitemap")({
 const lots: LotData[] = [
   // B1
   { id: "b1-1",  block: "B1", number: 1,  name: "The Vail",      status: "available", acres: "0.52 ac", SQF: "23,049 ft²",  path: "" },
-  { id: "b1-2",  block: "B1", number: 2,  name: "The Aspen",     status: "reserved",  acres: "0.52 ac", SQF: "22,980 ft²",  path: "" },
+  { id: "b1-2",  block: "B1", number: 2,  name: "Durango",     status: "reserved",  acres: "0.52 ac", SQF: "22,980 ft²",  path: "" },
   { id: "b1-3",  block: "B1", number: 3,  name: "Telluride",     status: "available", acres: "0.48 ac", SQF: "21,104 ft²",  path: "" },
   { id: "b1-4",  block: "B1", number: 4,  name: "The Breck",     status: "available", acres: "0.80 ac", SQF: "26,179 ft²",  path: "" },
   { id: "b1-5",  block: "B1", number: 5,  name: "Keystone",      status: "sold",      acres: "0.59 ac", SQF: "25,825 ft²",  path: "" },
@@ -38,7 +38,7 @@ const lots: LotData[] = [
   { id: "b1-15", block: "B1", number: 15, name: "Alma",          status: "sold",      acres: "0.61 ac", SQF: "26,922 ft²",  path: "" },
   // B2
   { id: "b2-1",  block: "B2", number: 1,  name: "Crested Butte", status: "available", acres: "0.41 ac", SQF: "18,120 ft²",  path: "" },
-  { id: "b2-2",  block: "B2", number: 2,  name: "Durango",       status: "available", acres: "0.36 ac", SQF: "15,938 ft²",  path: "" },
+  { id: "b2-2",  block: "B2", number: 2,  name: "The Aspen",       status: "available", acres: "0.36 ac", SQF: "15,938 ft²",  path: "" },
   { id: "b2-3",  block: "B2", number: 3,  name: "Ouray",         status: "reserved",  acres: "0.41 ac", SQF: "18,170 ft²",  path: "" },
   { id: "b2-4",  block: "B2", number: 4,  name: "Pagosa Springs",status: "available", acres: "0.78 ac", SQF: "33,989 ft²",  path: "" },
   { id: "b2-5",  block: "B2", number: 5,  name: "Leadville",     status: "available", acres: "0.63 ac", SQF: "27,523 ft²",  path: "" },
