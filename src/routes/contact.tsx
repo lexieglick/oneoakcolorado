@@ -6,6 +6,10 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 
+// 👉 Paste your Web3Forms access key between the quotes below.
+//    Get it free at https://web3forms.com (enter info@oneoakcolorado.com)
+const WEB3FORMS_ACCESS_KEY = "b2b61254-148b-41fd-bb6e-95b911532c30";
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
@@ -20,6 +24,36 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(false);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formData.append("subject", "New inquiry from the One Oak website");
+    formData.append("from_name", "One Oak Website");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <>
@@ -50,7 +84,7 @@ function ContactPage() {
                 <div className="space-y-6">
                   {[
                     { icon: MapPin, text: "Castle Rock, Colorado 80108" },
-                    { icon: Mail, text: "info@oneoakcommunity.com" },
+                    { icon: Mail, text: "info@oneoakcolorado.com" },
                   ].map((item) => (
                     <div key={item.text} className="flex items-center gap-4">
                       <item.icon size={20} className="text-primary" strokeWidth={1.5} />
@@ -81,13 +115,17 @@ function ContactPage() {
                   <p className="mt-3 text-muted-foreground">We'll be in touch shortly.</p>
                 </div>
               ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSubmitted(true);
-                  }}
-                  className="space-y-6"
-                >
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Spam protection — hidden from real visitors */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   {[
                     { name: "name", label: "Full Name", type: "text" },
                     { name: "email", label: "Email", type: "email" },
@@ -117,10 +155,16 @@ function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-primary text-primary-foreground py-4 rounded-sm text-sm tracking-[0.15em] uppercase hover:bg-primary/90 transition-colors"
+                    disabled={submitting}
+                    className="w-full bg-primary text-primary-foreground py-4 rounded-sm text-sm tracking-[0.15em] uppercase hover:bg-primary/90 transition-colors disabled:opacity-60"
                   >
-                    Send Inquiry
+                    {submitting ? "Sending…" : "Send Inquiry"}
                   </button>
+                  {error && (
+                    <p className="text-sm text-red-500 text-center">
+                      Something went wrong. Please try again, or email us directly at info@oneoakcolorado.com.
+                    </p>
+                  )}
                 </form>
               )}
             </motion.div>
