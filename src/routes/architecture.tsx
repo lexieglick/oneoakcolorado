@@ -7,6 +7,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 import ridgelineImg from "@/assets/home-1.png";
 import crestviewImg from "@/assets/home-2.png";
+import springsImg from "@/assets/home-3.png";
+import dillonImg from "@/assets/home-4.png";
+
 
 import cv01 from "@/assets/thecrestview/CAM_01.jpg";
 import cv02 from "@/assets/thecrestview/CAM_02.jpg";
@@ -30,9 +33,30 @@ import rl08 from "@/assets/theridgeline/CAM_08.jpg";
 
 const ridgelineGallery = [rl01, rl02, rl03, rl04, rl05, rl06, rl07, rl08];
 
+// Springs
+import sp01 from "@/assets/thesprings/CAM_01.jpg";
+import sp02 from "@/assets/thesprings/CAM_02.jpg";
+import sp03 from "@/assets/thesprings/CAM_03.jpg";
+import sp04 from "@/assets/thesprings/CAM_04.jpg";
+import sp05 from "@/assets/thesprings/CAM_05.jpg";
+
+const springsGallery = [sp01, sp02, sp03, sp04, sp05];
+
+// Dillon
+import dl01 from "@/assets/thedillon/CAM_01.jpg";
+import dl02 from "@/assets/thedillon/CAM_02.jpg";
+import dl03 from "@/assets/thedillon/CAM_03.jpg";
+import dl04 from "@/assets/thedillon/CAM_04.jpg";
+import dl05 from "@/assets/thedillon/CAM_05.jpg";
+import dl06 from "@/assets/thedillon/CAM_06.jpg";
+
+const dillonGallery = [dl01, dl02, dl03, dl04, dl05, dl06];
+
 const videos = {
   ridgeline: "NSosbPN-PY4",
   crestview: "SyB7Fm1-zH0",
+  springs: "Zu5fv4ii4bk",
+  dillon: "oi999w4LcQo",
 };
 
 export const Route = createFileRoute("/architecture")({
@@ -72,6 +96,24 @@ const homes = [
     specs: "4 Bed · 5 Bath · 7,000 SF",
     desc: "A masterful blend of stone, timber, and glass set among towering pines — featuring expansive balconies, a twelve-car garage, and resort-level outdoor living.",
     gallery: crestviewGallery,
+  },
+  {
+    id: "springs",
+    videoId: videos.springs,
+    poster: ridgelineImg, // temporary until you have an image
+    title: "The Springs",
+    specs: "4 Bed · 5 Bath · 5,917 SF",
+    desc: "A refined mountain residence featuring spacious interiors, timeless craftsmanship, and thoughtfully curated finishes, seamlessly blending modern comfort with Colorado's natural beauty.",
+    gallery: springsGallery,
+  },
+  {
+    id: "dillon",
+    videoId: videos.dillon,
+    poster: crestviewImg,
+    title: "The Dillon",
+    specs: "4 Bed · 4 Bath · 8,082 SF",
+    desc: "A refined residence designed to embrace its surroundings, featuring expansive windows, elevated finishes, and thoughtfully crafted spaces that create a seamless connection between sophisticated living and the Colorado landscape.",
+    gallery: dillonGallery,
   },
 ];
 

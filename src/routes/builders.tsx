@@ -47,7 +47,7 @@ const builders: Partner[] = [
     specialty: "Bespoke Luxury Construction",
     description:
       "Alpert Custom Homes brings decades of craftsmanship to every project, delivering meticulously built residences defined by precision, premium materials, and timeless detail.",
-    website: "https://alpertcustom.com",
+    website: "https://www.alperthomes.com",
     img: alpertImg,
   },
   {
@@ -66,7 +66,6 @@ const architects: Partner[] = [
       "For over 26 years, Godden | Sudik Architects has been creating innovative, livable spaces that enrich communities.",
     website: "https://goddensudik.com",
     linkedin: "https://linkedin.com/company/godden-sudik-architects",
-    email: "info@goddensudik.com",
     img: goddenImg,
   },
   {
@@ -74,8 +73,7 @@ const architects: Partner[] = [
     specialty: "Boutique Luxury Residential",
     description:
       "Known for award-winning luxury residential designs combining innovation and craftsmanship.",
-    website: "https://michaelperezarchitects.com",
-    email: "studio@michaelperezarchitects.com",
+      website: "https://mparchitect.com",
     img: perezImg,
   },
   {
@@ -83,8 +81,7 @@ const architects: Partner[] = [
     specialty: "Custom Residential & Commercial",
     description:
       "Led by John Matthews, M-A Architects delivers award-winning residential and commercial design work across Colorado.",
-    website: "https://m-aarchitects.com",
-    email: "info@m-aarchitects.com",
+    website: "https://maarchitects.co",
     img: maImg,
   },
 ];
@@ -164,7 +161,7 @@ function BuildersPage() {
             <SectionHeading
               label=""
               title="Builders & Architects"
-              description="One Oak is shaped by Colorado's most distinguished custom home builders and architects — selected for excellence, innovation, and craftsmanship."
+              description="One Oak is shaped by Colorado's most distinguished custom home builders and architects, selected for excellence, innovation, and craftsmanship."
             />
           </div>
         </section>
