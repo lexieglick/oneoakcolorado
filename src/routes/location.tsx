@@ -160,7 +160,7 @@ function LocationPage() {
                     <img
                       src={map.image}
                       alt={map.title}
-                      className="w-full max-w-5xl mx-auto h-auto block transition-transform duration-700 group-hover:scale-[1.015]"
+                      className="w-full max-w-3xl mx-auto h-auto block transition-transform duration-700 group-hover:scale-[1.015]"
                     />
                     {/* Dim overlay on hover */}
                     <div className="absolute inset-0 bg-background/0 group-hover:bg-background/25 transition-all duration-300" />
