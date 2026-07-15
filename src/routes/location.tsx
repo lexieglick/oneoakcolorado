@@ -104,8 +104,7 @@ function LocationPage() {
                 Castle Rock, Colorado
               </h1>
               <p className="text-sm sm:text-base text-foreground max-w-2xl leading-relaxed">
-  Positioned between Denver and Colorado Springs along the Front Range,
-  One Oak offers the perfect balance of seclusion and accessibility.
+              Located in the heart of Castle Rock along Colorado's Front Range, One Oak offers the perfect balance of privacy and easy access to everyday amenities.
 </p>
             </div>
           </motion.div>
