@@ -18,42 +18,43 @@ function Index() {
 
       <main>
         {/* HERO */}
-        <section className="relative h-screen overflow-hidden">
+        <section className="relative h-[100svh] overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={home2}
               alt="One Oak luxury home exterior"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-bottom md:object-center"
             />
 
-            {/* DARK CINEMATIC OVERLAY (RESTORED) */}
-            <div className="absolute inset-0 bg-black/40" />
-
-            {/* TOP TO BOTTOM READABILITY FADE */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            {/* TOP SCRIM FOR TITLE, BOTTOM SCRIM FOR LINK OVER THE GRASS */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/40" />
           </div>
 
-          <div className="relative z-10 flex h-full flex-col items-center justify-end pb-24 px-6 text-center">
+          <div className="relative z-10 flex h-full flex-col items-center justify-start pt-48 md:pt-48 px-6 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="text-xs tracking-[0.4em] uppercase text-white/80 mb-6 block">
+              <span className="text-sm md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-white/80 mb-2 md:mb-2 block">
                 Castle Rock, Colorado
               </span>
 
-              <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-tight text-white">
+              <h1 className="font-display text-7xl md:text-8xl lg:text-9xl tracking-tight text-white">
                 One Oak
               </h1>
+            </motion.div>
+          </div>
 
-              <p className="mt-6 text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
-                An exclusive enclave of luxury homes nestled in Colorado's most coveted foothills.
-              </p>
-
+          <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center pb-12 md:pb-16 px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
               <Link
                 to="/architecture"
-                className="mt-10 inline-flex items-center gap-3 text-sm tracking-[0.15em] uppercase text-primary hover:text-white transition-colors duration-300"
+                className="inline-flex items-center gap-3 text-sm tracking-[0.15em] uppercase text-white hover:text-primary transition-colors duration-300"
               >
                 Explore Our Architecture <ArrowRight size={16} />
               </Link>
@@ -62,7 +63,7 @@ function Index() {
         </section>
 
         {/* INTRO */}
-        <section className="py-32 px-6">
+        <section className="py-20 md:py-32 px-6">
           <div className="mx-auto max-w-4xl">
             <SectionHeading
               label="Welcome"
@@ -80,7 +81,7 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1 }}
-              className="relative aspect-video md:aspect-[21/9] overflow-hidden rounded-sm"
+              className="relative aspect-square sm:aspect-video md:aspect-[21/9] overflow-hidden rounded-sm"
             >
               <img
                 src={home1}
@@ -90,12 +91,12 @@ function Index() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent md:bg-gradient-to-r md:from-background/70" />
 
-              <div className="absolute bottom-0 left-0 p-8 md:p-12 flex flex-col items-start text-left">
+              <div className="absolute bottom-0 left-0 p-6 md:p-12 flex flex-col items-start text-left">
                 <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">
                   Featured Home
                 </span>
 
-                <h3 className="font-display text-3xl md:text-4xl text-foreground mt-2 max-w-sm md:max-w-xl">
+                <h3 className="font-display text-2xl md:text-4xl text-foreground mt-2 max-w-sm md:max-w-xl">
                   Modern Mountain Living
                 </h3>
               </div>
@@ -104,8 +105,8 @@ function Index() {
         </section>
 
         {/* QUICK LINKS */}
-        <section className="py-32 px-6">
-          <div className="mx-auto max-w-7xl grid md:grid-cols-3 gap-8">
+        <section className="py-20 md:py-32 px-6">
+          <div className="mx-auto max-w-7xl grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 icon: MapPin,
@@ -135,7 +136,7 @@ function Index() {
               >
                 <Link
                   to={item.to}
-                  className="group block p-8 border border-border rounded-sm hover:border-primary/30 transition-all duration-500 bg-card"
+                  className="group block p-6 md:p-8 border border-border rounded-sm hover:border-primary/30 transition-all duration-500 bg-card"
                 >
                   <item.icon
                     size={28}

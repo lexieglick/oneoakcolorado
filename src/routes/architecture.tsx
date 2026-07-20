@@ -84,7 +84,7 @@ const homes = [
     videoId: videos.ridgeline,
     poster: ridgelineImg,
     title: "The Steamboat",
-    specs: "4 Bed · 5 Bath · 7,831 SF",
+    specs: "4 Bed · 5 Bath · 7,831 Finished Square Footage",
     desc: "A single-story contemporary masterpiece with sweeping roof lines, natural stone facades, and floor-to-ceiling glass opening to the landscape.",
     gallery: ridgelineGallery,
   },
@@ -93,8 +93,8 @@ const homes = [
     videoId: videos.crestview,
     poster: crestviewImg,
     title: "The Aspen",
-    specs: "4 Bed · 5 Bath · 7,000 SF",
-    desc: "A masterful blend of stone, timber, and glass set among towering pines — featuring expansive balconies, a twelve-car garage, and resort-level outdoor living.",
+    specs: "4 Bed · 5 Bath · 7,000 Finished Square Footage",
+    desc: "A masterful blend of stone, timber, and glass set among a beautiful landscape, featuring expansive balconies, a twelve-car garage, and resort-level outdoor living.",
     gallery: crestviewGallery,
   },
   {
@@ -102,7 +102,7 @@ const homes = [
     videoId: videos.springs,
     poster: ridgelineImg, // temporary until you have an image
     title: "The Springs",
-    specs: "4 Bed · 5 Bath · 5,917 SF",
+    specs: "4 Bed · 5 Bath · 5,917 Finished Square Footage",
     desc: "A refined mountain residence featuring spacious interiors, timeless craftsmanship, and thoughtfully curated finishes, seamlessly blending modern comfort with Colorado's natural beauty.",
     gallery: springsGallery,
   },
@@ -111,7 +111,7 @@ const homes = [
     videoId: videos.dillon,
     poster: crestviewImg,
     title: "The Dillon",
-    specs: "4 Bed · 4 Bath · 8,082 SF",
+    specs: "4 Bed · 4 Bath · 8,082 Finished Square Footage",
     desc: "A refined residence designed to embrace its surroundings, featuring expansive windows, elevated finishes, and thoughtfully crafted spaces that create a seamless connection between sophisticated living and the Colorado landscape.",
     gallery: dillonGallery,
   },
@@ -133,20 +133,20 @@ function ImageGallery({ images }: { images: string[] }) {
       <div className="relative mt-6">
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/40 text-white w-8 h-8 flex items-center justify-center rounded-full text-xl"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 text-white w-8 h-8 flex items-center justify-center rounded-full text-xl"
         >
           ‹
         </button>
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/40 text-white w-8 h-8 flex items-center justify-center rounded-full text-xl"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/40 text-white w-8 h-8 flex items-center justify-center rounded-full text-xl"
         >
           ›
         </button>
 
         <div
           ref={scrollRef}
-          className="flex gap-2 overflow-x-auto pb-1 px-10"
+          className="flex gap-2 overflow-x-auto pb-1"
           style={{ scrollbarWidth: "none" }}
         >
           {images.map((src, i) => (
@@ -211,15 +211,17 @@ function VideoCard({
         />
       </div>
 
-      <div className="mt-5">
-        <span className="text-xs uppercase tracking-widest text-primary">
-          {home.specs}
-        </span>
-        <h3 className="text-2xl font-bold mt-2">{home.title}</h3>
-        <p className="text-sm text-muted-foreground mt-2">{home.desc}</p>
-      </div>
-
       <ImageGallery images={home.gallery} />
+
+<div className="mt-5">
+  <span className="text-xs uppercase tracking-widest text-primary">
+    {home.specs}
+  </span>
+  <h3 className="text-2xl font-bold mt-2">{home.title}</h3>
+  <p className="text-sm text-muted-foreground mt-2">
+    {home.desc}
+  </p>
+</div>
     </motion.div>
   );
 }
@@ -229,12 +231,12 @@ function HomesPage() {
     <div className="overflow-x-hidden">
       <Header />
 
-      <main className="pt-24">
+      <main className="pt-16">
         <section className="py-16 px-6 max-w-4xl mx-auto">
           <SectionHeading
             label="Portfolio"
             title="Architecture"
-            description="Each residence at One Oak is a unique creation designed for the landscape."
+            description="One Oak offers the opportunity to build a fully custom home or draw inspiration from our thoughtfully designed residences, each created exclusively for the community."
           />
         </section>
 

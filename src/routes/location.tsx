@@ -70,8 +70,8 @@ function LocationPage() {
     },
     {
       image: proximityMap3,
-      title: "Full Area Guide",
-      desc: "Comprehensive dining, shopping, and entertainment options nearby.",
+      title: "Golf & Recreation",
+      desc: "Comprehensive list of all the golf and country clubs nearby along with the finest state parks and trails.",
     },
   ];
 
@@ -188,17 +188,17 @@ function LocationPage() {
             <SectionHeading
               label="Find Us"
               title="Get Directions"
-              description="Located in Castle Rock, Colorado — easily accessible from I-25."
+              description="Located in Castle Rock, Colorado — just minutes from Exit 181 on I-25."
             />
             <div className="mt-16 aspect-[21/9] rounded-sm overflow-hidden border border-border bg-card">
-              <iframe
-                title="One Oak location map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49197.74798402839!2d-104.8860837!3d39.3722121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c9bd6be2e3f73%3A0x5f09c61b1e7bc1cd!2sCastle%20Rock%2C%20CO!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
-                className="w-full h-full border-0"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            <iframe
+  title="One Oak location map"
+  src="https://maps.google.com/maps?q=39.359562,-104.825613&z=14&output=embed"
+  className="w-full h-full border-0"
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
             </div>
           </div>
         </section>

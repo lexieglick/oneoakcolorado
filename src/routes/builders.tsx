@@ -161,7 +161,7 @@ function BuildersPage() {
             <SectionHeading
               label=""
               title="Builders & Architects"
-              description="One Oak is shaped by Colorado's most distinguished custom home builders and architects, selected for excellence, innovation, and craftsmanship."
+              description="One Oak is shaped by Colorado’s most distinguished builders and architects, offering the opportunity to create a fully custom home or draw inspiration from thoughtfully designed residences crafted exclusively for the community."
             />
           </div>
         </section>

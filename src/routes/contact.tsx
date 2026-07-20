@@ -80,11 +80,11 @@ function ContactPage() {
               className="space-y-10"
             >
               <div>
-                <h3 className="font-display text-2xl text-foreground mb-6">Visit One Oak</h3>
                 <div className="space-y-6">
                   {[
-                    { icon: MapPin, text: "Castle Rock, Colorado 80108" },
+                    { icon: MapPin, text: "Castle Rock, Colorado 80104" },
                     { icon: Mail, text: "info@oneoakcolorado.com" },
+                    { icon: Phone, text: "(720) 248-7473" },
                   ].map((item) => (
                     <div key={item.text} className="flex items-center gap-4">
                       <item.icon size={20} className="text-primary" strokeWidth={1.5} />

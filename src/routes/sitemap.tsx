@@ -48,29 +48,29 @@ const lots: LotData[] = [
 ];
 
 const hotspots: Record<string, { x: number; y: number; w: number; h: number }> = {
-  "b1-1":  { x: 58.8, y: 13,   w: 7,  h: 11 },
-  "b1-2":  { x: 50.1, y: 14.6, w: 9,  h: 11 },
-  "b1-3":  { x: 43.9, y: 20,   w: 10, h: 10 },
-  "b1-4":  { x: 41.6, y: 9.8,  w: 11, h: 11 },
-  "b1-5":  { x: 33.9, y: 8.3,  w: 10, h: 11 },
-  "b1-6":  { x: 26.5, y: 8.9,  w: 11, h: 13 },
-  "b1-7":  { x: 24.9, y: 19,   w: 13, h: 10 },
-  "b1-8":  { x: 32.9, y: 26.9, w: 14, h: 11 },
-  "b1-9":  { x: 32.6, y: 35.5, w: 14, h: 10 },
-  "b1-10": { x: 33.2, y: 42.1, w: 14, h: 10 },
-  "b1-11": { x: 35.2, y: 49.8, w: 14, h: 10 },
-  "b1-12": { x: 39.5, y: 55.9, w: 14, h: 9  },
-  "b1-13": { x: 44.2, y: 60.8, w: 13, h: 9  },
-  "b1-14": { x: 49.4, y: 66.8, w: 13, h: 8  },
-  "b1-15": { x: 58.7, y: 68.4, w: 11, h: 9  },
-  "b2-1":  { x: 66.9, y: 57.2, w: 10, h: 9  },
-  "b2-2":  { x: 67.3, y: 51.2, w: 10, h: 9  },
-  "b2-3":  { x: 68.3, y: 43.9, w: 11, h: 11 },
-  "b2-4":  { x: 67.7, y: 32.1, w: 12, h: 11 },
-  "b2-5":  { x: 61.1, y: 31.7, w: 10, h: 10 },
-  "b2-6":  { x: 53,   y: 34.4, w: 11, h: 10 },
-  "b2-7":  { x: 50.2, y: 42.6, w: 12, h: 12 },
-  "b2-8":  { x: 56,   y: 51.8, w: 11, h: 10 },
+  "b1-1": { x: 47.6, y: 22.7, w: 7.0, h: 11.0 },
+  "b1-2": { x: 40.1, y: 23.8, w: 7.5, h: 11.2 },
+  "b1-3": { x: 34.0, y: 28.0, w: 7.8, h: 9.8 },
+  "b1-4": { x: 32.7, y: 18.3, w: 6.3, h: 11.3 },
+  "b1-5": { x: 26.1, y: 16.6, w: 6.5, h: 9.8 },
+  "b1-6": { x: 17.9, y: 18.9, w: 8.9, h: 10.4 },
+  "b1-7": { x: 19.1, y: 29.3, w: 8.4, h: 6.8 },
+  "b1-8": { x: 25.3, y: 38.4, w: 11.2, h: 7.5 },
+  "b1-9": { x: 26.1, y: 46.1, w: 8.7, h: 6.8 },
+  "b1-10": { x: 26.0, y: 53.0, w: 11.4, h: 7.8 },
+  "b1-11": { x: 28.5, y: 60.7, w: 8.2, h: 6.9 },
+  "b1-12": { x: 33.0, y: 65.7, w: 7.9, h: 7.9 },
+  "b1-13": { x: 38.8, y: 69.4, w: 5.0, h: 10.7 },
+  "b1-14": { x: 42.9, y: 75.1, w: 5.1, h: 11.5 },
+  "b1-15": { x: 48.8, y: 79.0, w: 5.6, h: 10.1 },
+  "b2-1": { x: 56.1, y: 66.9, w: 10.0, h: 7.8 },
+  "b2-2": { x: 56.3, y: 60.6, w: 10.0, h: 6.4 },
+  "b2-3": { x: 55.7, y: 52.5, w: 11.1, h: 8.2 },
+  "b2-4": { x: 57.0, y: 37.5, w: 9.2, h: 15.2 },
+  "b2-5": { x: 49.9, y: 38.0, w: 7.1, h: 12.5 },
+  "b2-6": { x: 42.3, y: 41.8, w: 8.4, h: 10.9 },
+  "b2-7": { x: 41.7, y: 52.3, w: 7.1, h: 8.3 },
+  "b2-8": { x: 45.6, y: 59.0, w: 6.8, h: 10.0 },
 };
 
 const statusMeta: Record<LotData["status"], { label: string; swatch: string }> = {
@@ -98,10 +98,10 @@ function SiteMapPage() {
         </section>
 
         <section className="px-6 pb-24">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-3xl">
 
             {/* Legend */}
-            <div className="flex items-center justify-center gap-8 mb-10">
+            <div className="flex items-center justify-center gap-8 mb-5 -mt-8">
               {Object.entries(statusMeta).map(([status, { label, swatch }]) => (
                 <div key={status} className="flex items-center gap-2.5">
                   <div className="w-3.5 h-3.5 rounded-sm" style={{ backgroundColor: swatch }} />

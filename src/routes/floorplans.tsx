@@ -12,6 +12,10 @@ import sudik1 from "@/assets/sudikfp/sudik-1.png";
 import sudik2 from "@/assets/sudikfp/sudik-2.png";
 import sudik3 from "@/assets/sudikfp/sudik-3.png";
 
+/* SUDIK2 - SPRINGS */
+import springs1 from "@/assets/sudikfp2/springs-1.png";
+import springs2 from "@/assets/sudikfp2/springs-2.png";
+
 /* MICHAEL */
 import michael1 from "@/assets/michaelfp/michael-1.png";
 import michael2 from "@/assets/michaelfp/michael-2.png";
@@ -42,6 +46,13 @@ const residences = [
     lotName: "Lot 11",
     primary: michael1,
     secondary: michael2,
+  },
+  {
+    index: "13",
+    name: "The Springs",
+    lotName: "Lot 13",
+    primary: springs1,
+    secondary: springs2,
   },
 ];
 
