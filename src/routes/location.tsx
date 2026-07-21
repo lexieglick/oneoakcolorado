@@ -65,8 +65,8 @@ function LocationPage() {
     },
     {
       image: proximityMap2,
-      title: "Dining & Entertainment",
-      desc: "An expanded view of the area's top culinary destinations.",
+      title: "Schools, Grocery & Hospitals",
+      desc: "A closer look at nearby schools, shopping, and medical care.",
     },
     {
       image: proximityMap3,

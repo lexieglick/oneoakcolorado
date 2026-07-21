@@ -53,10 +53,10 @@ import dl06 from "@/assets/thedillon/CAM_06.jpg";
 const dillonGallery = [dl01, dl02, dl03, dl04, dl05, dl06];
 
 const videos = {
-  ridgeline: "NSosbPN-PY4",
-  crestview: "SyB7Fm1-zH0",
-  springs: "Zu5fv4ii4bk",
-  dillon: "oi999w4LcQo",
+  ridgeline: "Xc1g8U1jlPA", 
+  crestview: "en1m7YQ4PRM",
+  springs: "FpG_L80TjjI",   
+  dillon: "jQP4yqC7yP0",    
 };
 
 export const Route = createFileRoute("/architecture")({
